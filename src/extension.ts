@@ -5,7 +5,7 @@ import * as vscode from "vscode";
 let statusBar: vscode.StatusBarItem;
 let terminal: vscode.Terminal;
 
-const radio = "https://coderadio-admin.freecodecamp.org/radio/8010/radio.mp3";
+const radio = "https://coderadio-admin.freecodecamp.org/radio/8010/low.mp3";
 const portal = "https://detectportal.firefox.com/success.txt";
 
 async function hasConnection()
@@ -64,13 +64,13 @@ async function playStream()
     vscode.window.showInformationMessage("Can't play, no internet connection.");
     return;
   }
-  updateSidebar("◼ Code Radio", "◼ Stop playing", "coderadio.stop");
+  updateSidebar("$(debug-stop) Code Radio", "$(play) Stop playing", "coderadio.stop");
   startTerminal();
 }
 
 async function stopStream()
 {
-  updateSidebar("▶ Code Radio", "▶ Start playing", "coderadio.play");
+  updateSidebar("$(debug-stop) Code Radio", "$(play) Start playing", "coderadio.play");
   stopTerminal();
 }
 
